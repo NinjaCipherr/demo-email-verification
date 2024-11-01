@@ -48,4 +48,29 @@ public class User implements UserDetails {
     // li do cho viec toi muon return lai collection la muon tra vce 1 gia tri bat
     // bien
   }
+
+  public String getPassword() {
+
+    return this.password;
+  }
+
+  public String getUsername() {
+    return this.email;
+  }
+
+  public boolean isAccountNonExpired() {
+    return true;
+  }
+
+  public boolean isAccountNonLocked() {
+    return !this.locked;
+  }
+
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
+
+  public boolean isEnabled() {
+    return enable;
+  }
 }
