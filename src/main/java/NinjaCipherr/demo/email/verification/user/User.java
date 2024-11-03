@@ -11,6 +11,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.SequenceGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,8 +22,11 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 public class User implements UserDetails {
   // lam 1 layer de cung cap thong tin cua user
+  @SequenceGenerator(name = "user_sequence", sequenceName = "user_sequence", allocationSize = 1)
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
